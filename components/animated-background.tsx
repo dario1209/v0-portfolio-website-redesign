@@ -16,7 +16,16 @@ export function AnimatedBackground() {
 
 function AnimatedText() {
   const text = "KingDario"
-  const characters = text.length // 9 characters
+  const characters = text.length
+  const [animationKey, setAnimationKey] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimationKey((prev) => prev + 1)
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="fixed inset-0 -z-10 flex items-center justify-center bg-background">
@@ -40,7 +49,10 @@ function AnimatedText() {
           ${generateCharacterStyles(characters)}
         }
       `}</style>
-      <div className="animated-word text-[12vmax] font-[Oxanium] text-foreground drop-shadow-[0_0_1rem_currentColor]">
+      <div
+        key={animationKey}
+        className="animated-word text-[12vmax] font-[Oxanium] text-foreground drop-shadow-[0_0_1rem_currentColor]"
+      >
         {text.split("").map((char, i) => (
           <span key={i} className="animated-char" data-index={i + 1}>
             {char}
