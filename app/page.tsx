@@ -3,48 +3,17 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { AnimatedBackground } from "@/components/animated-background"
 
-const projects = [
+const menuSections = [
   {
-    title: "Project Alpha",
-    date: "December 2024",
-    role: "Design & Dev",
-    href: "#",
+    title: "about",
+    content: "Add your bio and information here.",
   },
   {
-    title: "Project Beta",
-    date: "November 2024",
-    role: "Dev",
-    collaborator: "Designer Name",
-    href: "#",
-  },
-  {
-    title: "Project Gamma",
-    date: "October 2024",
-    role: "Design & Dev",
-    href: "#",
-  },
-  {
-    title: "Project Delta",
-    date: "September 2024",
-    role: "Dev",
-    collaborator: "Designer Name",
-    href: "#",
-  },
-  {
-    title: "Project Epsilon",
-    date: "August 2024",
-    role: "Design & Dev",
-    href: "#",
-  },
-  {
-    title: "Project Zeta",
-    date: "July 2024",
-    role: "Design & Dev",
-    href: "#",
+    title: "work",
+    content: "Add your portfolio projects and work experience here.",
   },
 ]
 
@@ -58,11 +27,16 @@ const socialLinks = [
 export default function PortfolioPage() {
   const [theme, setTheme] = useState<"light" | "dark">("light")
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [expandedSection, setExpandedSection] = useState<string | null>(null)
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light"
     setTheme(newTheme)
     document.documentElement.classList.toggle("dark")
+  }
+
+  const toggleSection = (title: string) => {
+    setExpandedSection(expandedSection === title ? null : title)
   }
 
   return (
@@ -86,39 +60,31 @@ export default function PortfolioPage() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/98 backdrop-blur-lg overflow-y-auto">
           <div className="container mx-auto px-6 pt-24 pb-12 min-h-screen">
-            <nav className="flex flex-col gap-12">
-              <div>
-                <h2 className="text-sm font-medium mb-6 text-muted-foreground uppercase tracking-wider">Projects</h2>
-                <div className="space-y-4">
-                  {projects.map((project, index) => (
-                    <Card
-                      key={index}
-                      className="group border-0 border-t border-border rounded-none p-6 transition-all hover:bg-muted/30 bg-transparent"
-                    >
-                      <Link href={project.href} className="block">
-                        <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-                          <h3 className="text-xl font-medium group-hover:translate-x-2 transition-transform">
-                            {project.title}
-                          </h3>
-                          <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                            <span>{project.date}</span>
-                            <span>/</span>
-                            <span>{project.role}</span>
-                            {project.collaborator && (
-                              <>
-                                <span>/</span>
-                                <span>Design: {project.collaborator}</span>
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      </Link>
-                    </Card>
-                  ))}
+            <nav className="flex flex-col gap-6">
+              {menuSections.map((section, index) => (
+                <div key={index} className="border-b border-border pb-6">
+                  <button
+                    onClick={() => toggleSection(section.title)}
+                    className="w-full flex items-center justify-between text-left group"
+                  >
+                    <h2 className="text-4xl font-medium font-mono transition-colors group-hover:text-muted-foreground">
+                      {section.title}
+                    </h2>
+                    <ChevronDown
+                      className={`h-6 w-6 transition-transform ${
+                        expandedSection === section.title ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedSection === section.title && (
+                    <div className="mt-6 animate-in slide-in-from-top-2 duration-300">
+                      <p className="text-lg text-muted-foreground leading-relaxed">{section.content}</p>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
 
-              <div>
+              <div className="mt-6">
                 <h2 className="text-sm font-medium mb-6 text-muted-foreground uppercase tracking-wider">Connect</h2>
                 <div className="flex flex-col gap-4">
                   {socialLinks.map((link, index) => (
