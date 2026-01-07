@@ -70,8 +70,7 @@ export default function PortfolioPage() {
       <AnimatedBackground />
 
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto flex items-center justify-between px-6 py-6">
-          <h1 className="text-lg font-medium">KingDario</h1>
+        <div className="container mx-auto flex items-center justify-end px-6 py-6">
           <Button
             variant="ghost"
             size="icon"
