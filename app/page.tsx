@@ -84,20 +84,34 @@ export default function PortfolioPage() {
                 </div>
               ))}
 
-              <div className="mt-6">
-                <h2 className="text-sm font-medium mb-6 text-muted-foreground uppercase tracking-wider">Connect</h2>
-                <div className="flex flex-col gap-4">
-                  {socialLinks.map((link, index) => (
-                    <Link
-                      key={index}
-                      href={link.href}
-                      className="text-xl flex items-center gap-2 text-foreground hover:text-muted-foreground hover:translate-x-2 transition-all w-fit"
-                    >
-                      {link.name}
-                      <span className="text-sm">↗</span>
-                    </Link>
-                  ))}
-                </div>
+              <div className="border-b border-border pb-6">
+                <button
+                  onClick={() => toggleSection("connect")}
+                  className="w-full flex items-center justify-between text-left group"
+                >
+                  <h2 className="text-4xl font-medium font-mono transition-colors group-hover:text-muted-foreground">
+                    connect
+                  </h2>
+                  <ChevronDown
+                    className={`h-6 w-6 transition-transform ${expandedSection === "connect" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {expandedSection === "connect" && (
+                  <div className="mt-6 animate-in slide-in-from-top-2 duration-300">
+                    <div className="flex flex-col gap-4">
+                      {socialLinks.map((link, index) => (
+                        <Link
+                          key={index}
+                          href={link.href}
+                          className="text-xl flex items-center gap-2 text-foreground hover:text-muted-foreground hover:translate-x-2 transition-all w-fit"
+                        >
+                          {link.name}
+                          <span className="text-sm">↗</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </nav>
           </div>
