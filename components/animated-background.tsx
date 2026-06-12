@@ -38,9 +38,9 @@ function AnimatedText() {
         rel="stylesheet"
       />
       <div
-        key={animationKey}
-        className="animated-word text-[6vmax] sm:text-[8vmax] md:text-[12vmax] font-[Oxanium] text-foreground drop-shadow-[0_0_1rem_currentColor]"
-      >
+  key={animationKey}
+  className="animated-word text-[7vw] md:text-[6vw] font-[Oxanium] text-foreground drop-shadow-[0_0_1rem_currentColor]"
+>
         {text.split("").map((char, i) => (
           <span key={i} className="animated-char inline-block" data-index={i + 1}>
             {char}
