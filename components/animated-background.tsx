@@ -34,12 +34,12 @@ function AnimatedText() {
   return (
     <div className="fixed inset-0 -z-10 flex items-center justify-center bg-background px-4">
       <link
-        href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Amatic+SC:wght@700&family=Hachi+Maru+Pop&family=Stalemate&family=Yesteryear&display=swap"
-        rel="stylesheet"
-      />
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=UnifrakturMaguntia&family=Amatic+SC:wght@700&family=Hachi+Maru+Pop&family=Stalemate&family=Yesteryear&display=swap"
+  rel="stylesheet"
+/>
       <div
         key={animationKey}
-        className="animated-word text-[7vw] md:text-[6vw] font-[Oxanium] text-foreground drop-shadow-[0_0_1rem_currentColor]"
+        className="animated-word text-[7vw] md:text-[6vw] font-['Instrument_Serif'] text-foreground drop-shadow-[0_0_1rem_currentColor]"
       >
         {text.split("").map((char, i) => (
           <span key={i} className="animated-char inline-block" data-index={i + 1}>
