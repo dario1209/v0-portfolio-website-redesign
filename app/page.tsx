@@ -67,7 +67,7 @@ export default function PortfolioPage() {
                     onClick={() => toggleSection(section.title)}
                     className="w-full flex items-center justify-between text-left group"
                   >
-                    <h2 className="text-4xl font-medium font-mono transition-colors group-hover:text-muted-foreground">
+                    <h2 className="text-4xl font-['Instrument_Serif'] transition-colors group-hover:text-muted-foreground">
                       {section.title}
                     </h2>
                     <ChevronDown
@@ -89,7 +89,7 @@ export default function PortfolioPage() {
                   onClick={() => toggleSection("connect")}
                   className="w-full flex items-center justify-between text-left group"
                 >
-                  <h2 className="text-4xl font-medium font-mono transition-colors group-hover:text-muted-foreground">
+                  <h2 className="text-4xl font-['Instrument_Serif'] transition-colors group-hover:text-muted-foreground">
                     connect
                   </h2>
                   <ChevronDown
