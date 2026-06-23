@@ -55,24 +55,20 @@ export default function PortfolioPage() {
             </Button>
 
             <nav
-              className="absolute top-full mt-2 flex flex-col items-center gap-4 py-5 px-8 bg-background/90 backdrop-blur-sm rounded-md border border-border/40 transition-all duration-300 ease-out origin-top"
-              style={{
-                opacity: isMenuOpen ? 1 : 0,
-                transform: isMenuOpen ? "translateY(0) scaleY(1)" : "translateY(-8px) scaleY(0.95)",
-                pointerEvents: isMenuOpen ? "auto" : "none",
-              }}
+              className="absolute top-full right-1/2 translate-x-1/2 mt-3 flex flex-col items-center gap-3"
+              style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
             >
               {navLinks.map((link, i) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-xl text-foreground hover:text-muted-foreground whitespace-nowrap transition-all duration-300 ease-out"
+                  className="text-2xl text-foreground hover:text-muted-foreground whitespace-nowrap transition-all duration-500 ease-out"
                   style={{
                     fontFamily: "'Instrument Serif', serif",
                     opacity: isMenuOpen ? 1 : 0,
-                    transform: isMenuOpen ? "translateY(0)" : "translateY(-6px)",
-                    transitionDelay: isMenuOpen ? `${75 + i * 50}ms` : "0ms",
+                    transform: isMenuOpen ? "translateY(0)" : "translateY(-10px)",
+                    transitionDelay: isMenuOpen ? `${i * 80}ms` : "0ms",
                   }}
                 >
                   {link.name}
