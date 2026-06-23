@@ -39,7 +39,7 @@ export function PageHeader({ section }: { section: string }) {
         {/* Left: KingDario · section */}
         <Link
           href="/"
-          className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors uppercase tracking-wide font-bold"
+          className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors font-bold"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           <span className="text-3xl sm:text-4xl">KingDario</span>
