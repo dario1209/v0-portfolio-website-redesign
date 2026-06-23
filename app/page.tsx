@@ -2,8 +2,6 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
 import { AnimatedBackground } from "@/components/animated-background"
 
 const navLinks = [
@@ -24,7 +22,6 @@ export default function PortfolioPage() {
     document.documentElement.classList.toggle("dark")
   }
 
-  // Close menu when clicking outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -42,20 +39,44 @@ export default function PortfolioPage() {
       <AnimatedBackground />
 
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="flex items-center justify-end px-4 py-4">
+        <div className="flex items-center justify-end px-5 py-5">
           <div ref={menuRef} className="relative flex flex-col items-center">
-            <Button
-              variant="ghost"
-              size="icon"
+            {/* Animated hamburger / X */}
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
-              className="hover:bg-transparent"
+              className="relative w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer z-10"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+              <span
+                className="block absolute w-6 h-[1.5px] bg-foreground transition-all duration-400"
+                style={{
+                  transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                  transform: isMenuOpen
+                    ? "rotate(45deg) translateY(0)"
+                    : "rotate(0) translateY(-4px)",
+                }}
+              />
+              <span
+                className="block absolute w-6 h-[1.5px] bg-foreground transition-all duration-400"
+                style={{
+                  transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                  opacity: isMenuOpen ? 0 : 1,
+                }}
+              />
+              <span
+                className="block absolute w-6 h-[1.5px] bg-foreground transition-all duration-400"
+                style={{
+                  transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                  transform: isMenuOpen
+                    ? "rotate(-45deg) translateY(0)"
+                    : "rotate(0) translateY(4px)",
+                }}
+              />
+            </button>
 
+            {/* Nav links */}
             <nav
-              className="absolute top-full right-1/2 translate-x-1/2 mt-3 flex flex-col items-center gap-3"
+              className="absolute top-full right-1/2 translate-x-1/2 mt-4 flex flex-col items-center gap-4"
               style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}
             >
               {navLinks.map((link, i) => (
@@ -63,12 +84,14 @@ export default function PortfolioPage() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl text-foreground hover:text-muted-foreground whitespace-nowrap transition-all duration-500 ease-out"
+                  className="text-2xl text-foreground hover:text-muted-foreground whitespace-nowrap"
                   style={{
                     fontFamily: "'Instrument Serif', serif",
                     opacity: isMenuOpen ? 1 : 0,
-                    transform: isMenuOpen ? "translateY(0)" : "translateY(-10px)",
-                    transitionDelay: isMenuOpen ? `${i * 80}ms` : "0ms",
+                    transform: isMenuOpen ? "translateY(0)" : "translateY(-12px)",
+                    transition: isMenuOpen
+                      ? `opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.07 + 0.1}s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.07 + 0.1}s`
+                      : `opacity 0.2s ease ${(navLinks.length - 1 - i) * 0.03}s, transform 0.2s ease ${(navLinks.length - 1 - i) * 0.03}s`,
                   }}
                 >
                   {link.name}
@@ -80,14 +103,12 @@ export default function PortfolioPage() {
       </header>
 
       <div className="fixed bottom-6 left-6 z-50">
-        <Button
-          variant="outline"
-          size="sm"
+        <button
           onClick={toggleTheme}
-          className="bg-background/60 backdrop-blur-sm hover:bg-background/80 transition-colors"
+          className="px-3 py-1.5 text-sm border border-border rounded-md bg-background/60 backdrop-blur-sm hover:bg-background/80 transition-colors text-foreground"
         >
           {theme === "light" ? "Dark" : "Light"}
-        </Button>
+        </button>
       </div>
     </div>
   )
