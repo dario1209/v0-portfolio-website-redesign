@@ -42,8 +42,8 @@ export default function PortfolioPage() {
       <AnimatedBackground />
 
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto flex items-center justify-end px-6 py-6">
-          <div ref={menuRef} className="relative">
+        <div className="flex items-center justify-end px-4 py-4">
+          <div ref={menuRef} className="relative flex flex-col items-center">
             <Button
               variant="ghost"
               size="icon"
@@ -55,13 +55,13 @@ export default function PortfolioPage() {
             </Button>
 
             {isMenuOpen && (
-              <nav className="absolute top-full right-0 mt-2 flex flex-col gap-3 py-4 px-6 bg-background/90 backdrop-blur-sm rounded-md border border-border/40">
+              <nav className="absolute top-full mt-2 flex flex-col items-center gap-4 py-5 px-8 bg-background/90 backdrop-blur-sm rounded-md border border-border/40">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-lg text-foreground hover:text-muted-foreground transition-colors whitespace-nowrap"
+                    className="text-xl text-foreground hover:text-muted-foreground transition-colors whitespace-nowrap"
                     style={{ fontFamily: "'Instrument Serif', serif" }}
                   >
                     {link.name}
