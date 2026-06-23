@@ -15,6 +15,13 @@ export function PageHeader({ section }: { section: string }) {
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Load Instrument Serif if not already present
+    if (!document.querySelector('link[href*="Instrument+Serif"]')) {
+      const link = document.createElement("link")
+      link.href = "https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+      link.rel = "stylesheet"
+      document.head.appendChild(link)
+    }
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false)
@@ -32,12 +39,12 @@ export function PageHeader({ section }: { section: string }) {
         {/* Left: KingDario · section */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-foreground hover:text-muted-foreground transition-colors"
+          className="flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors uppercase tracking-wide font-bold"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
-          <span className="text-lg">KingDario</span>
-          <span className="text-lg opacity-40">·</span>
-          <span className="text-lg opacity-60">{section}</span>
+          <span className="text-3xl sm:text-4xl">KingDario</span>
+          <span className="text-3xl sm:text-4xl">•</span>
+          <span className="text-3xl sm:text-4xl">{section}</span>
         </Link>
 
         {/* Right: Hamburger */}
