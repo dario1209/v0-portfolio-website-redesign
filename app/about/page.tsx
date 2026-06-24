@@ -7,7 +7,6 @@ const bioLines = [
   "Competed internationally, several first and second prizes. Masterclasses with world-renowned pianists throughout her teens.",
   "Principal pianist at SONA Orchestra. 2nd violin at UoA Symphony Orchestra. Hosted \"Music Matters\" on NPR 91.3 KUAF.",
   "BSc Physics, M.M in Instrumental Performance (Piano), M.M in Film Composition & Soundtrack.",
-  "Burned out. Needed a reset.",
   "Data Viz Analyst at Global People Analytics, Walmart.",
 ]
 
