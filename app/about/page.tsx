@@ -16,9 +16,9 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <PageHeader section="about" />
       <main className="pt-28 px-8 pb-16">
-        <div className="flex flex-col md:flex-row gap-16 max-w-5xl">
+        <div className="flex flex-col md:flex-row gap-20 max-w-6xl">
           {/* Bio left */}
-          <div className="flex-1">
+          <div className="flex-1 max-w-xl">
             <ul className="flex flex-col gap-5">
               {bioLines.map((line, i) => (
                 <li
@@ -37,7 +37,7 @@ export default function AboutPage() {
           </div>
 
           {/* Portrait right */}
-          <div className="w-full md:w-80 lg:w-96 shrink-0 h-[520px]">
+          <div className="w-full md:w-72 lg:w-80 shrink-0 h-[520px] md:ml-auto">
             <GlitchPortrait src="/portrait.png" />
           </div>
         </div>
