@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/page-header"
 
 const bioLines = [
-  "KingDario, AKA Sophia Spirlock.",
+  "KingDario AKA Sophia Spirlock.",
   "Born in Europe, grew up in the US.",
   "Started piano at four, violin at seven. Called a prodigy, gave her first professional recital at ten, with her mom as manager.",
   "Competed internationally, several first and second prizes. Masterclasses with world-renowned pianists throughout her teens.",
