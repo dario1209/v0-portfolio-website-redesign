@@ -43,7 +43,7 @@ export function PageHeader({ section }: { section: string }) {
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           <span className="text-3xl sm:text-4xl">KingDario</span>
-          <span className="text-3xl sm:text-4xl">•</span>
+          <span className="text-3xl sm:text-4xl">/</span>
           <span className="text-3xl sm:text-4xl">{section}</span>
         </Link>
 
