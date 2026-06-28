@@ -38,7 +38,7 @@ export default function AboutPage() {
 
           {/* Portrait right */}
           <div className="w-full md:w-80 lg:w-96 shrink-0 h-[520px]">
-            <GlitchPortrait src="/public/portrait.png" />
+            <GlitchPortrait src="/portrait.png" />
           </div>
         </div>
       </main>
