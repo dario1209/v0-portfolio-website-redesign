@@ -1,8 +1,5 @@
 import { PageHeader } from "@/components/page-header"
 import { GlitchPortrait } from "@/components/glitch-portrait"
-import { LyraRing } from "@/components/AerialAccents"
-import { ScrollAccent } from "@/components/ScrollAccent"
-import styles from "@/components/accents.module.css"
 
 const bioLines = [
   "KingDario AKA Sophia Spirlock.",
@@ -18,10 +15,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageHeader section="about" />
-      <main className="relative pt-28 px-8 pb-16">
-        <ScrollAccent className={`${styles.accent} ${styles.lyraRingSmall}`}>
-          <LyraRing />
-        </ScrollAccent>
+      <main className="pt-28 px-8 pb-16">
         <div className="flex flex-col md:flex-row gap-20 max-w-6xl">
           {/* Bio left */}
           <div className="flex-1 max-w-xl">

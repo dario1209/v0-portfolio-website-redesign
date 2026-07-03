@@ -3,9 +3,6 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { AnimatedBackground } from "@/components/animated-background"
-import { SilkHand, LyraRing } from "@/components/AerialAccents"
-import { ScrollAccent } from "@/components/ScrollAccent"
-import styles from "@/components/accents.module.css"
 
 const navLinks = [
   { name: "about", href: "/about" },
@@ -40,13 +37,6 @@ export default function PortfolioPage() {
   return (
     <div className="relative min-h-screen transition-colors">
       <AnimatedBackground />
-
-      <ScrollAccent className={`${styles.accent} ${styles.silkHand}`}>
-        <SilkHand />
-      </ScrollAccent>
-      <ScrollAccent className={`${styles.accent} ${styles.lyraRing}`} delay={150}>
-        <LyraRing />
-      </ScrollAccent>
 
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center justify-end px-8 py-5">
