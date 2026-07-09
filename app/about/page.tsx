@@ -32,9 +32,9 @@ export default function AboutPage() {
           </div>
 
           {/* Portrait video right */}
-          <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto">
+          <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto relative md:-mt-8">
             <p
-              className="text-center text-sm text-muted-foreground mb-2"
+              className="absolute top-4 left-1/2 -translate-x-1/2 text-center text-sm text-white/90 z-10"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Soph + Dario
