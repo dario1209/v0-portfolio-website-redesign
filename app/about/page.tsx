@@ -10,6 +10,7 @@ const bioLines = [
   "Competed internationally, several first and second prizes. Masterclasses with world-renowned pianists throughout her teens.",
   "BSc Physics, M.M in Instrumental Performance (Piano), M.M in Film Composition & Soundtrack.",
   "Principal pianist at SONA Orchestra. 2nd violin at UoA Symphony Orchestra. Hosted \"Music Matters\" on NPR 91.3 KUAF.",
+  "Discovered Bitcoin while still in school. Didn't know it yet, but don't trust, verify had already rewired how she'd see the world from then on.",
   "Data Viz Analyst at Global People Analytics, Walmart.",
   "Traded and researched crypto markets independently, before getting swept into DeFi summer as a glorious crypto degen, building in crypto ever since, full-stack, across prediction markets, AMMs, governance protocols, appchains.",
   "Fun Facts: Natural redhead, movie buff, DJs and produces electronic music, Legend rank in Hearthstone (mains Warlock and Rogue), fav video games over the years include Portal, Quake, Devil May Cry, Elden Ring, and Fallout, mom to two dobermans, Dario and Reign.",
