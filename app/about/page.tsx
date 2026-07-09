@@ -12,7 +12,7 @@ const bioLines = [
   "Principal pianist at SONA Orchestra. 2nd violin at UoA Symphony Orchestra. Hosted \"Music Matters\" on NPR 91.3 KUAF.",
   "Data Viz Analyst at Global People Analytics, Walmart.",
   "Traded and researched crypto markets independently, before getting swept into DeFi summer, building in crypto ever since, prediction markets, AMMs, governance protocols, appchains, full-stack.",
-  "Mom to two dobermans, Dario and Reign.",
+  "Fun Facts: Natural redhead, Legend rank in Hearthstone (mains Warlock and Rogue), fav video games over the years include Portal, Quake, Devil May Cry, Elden Ring, and Fallout, Movie Buff, DJs and produces electronic music, and is mom to two Dobermans, Dario and Reign.",
 ]
 export default function AboutPage() {
   return (
