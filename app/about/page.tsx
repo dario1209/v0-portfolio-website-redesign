@@ -34,9 +34,9 @@ export default function AboutPage() {
           {/* Portrait video right */}
           <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto relative md:-mt-8">
             <p
-              className="absolute top-4 left-1/2 -translate-x-1/2 text-center text-base text-white font-bold z-10"
-              style={{ fontFamily: "'Instrument Serif', serif" }}
-            >
+  className="absolute top-4 left-1/2 -translate-x-1/2 text-center text-lg text-white font-bold z-10"
+  style={{ fontFamily: "'Instrument Serif', serif" }}
+>
               Soph + Dario
             </p>
             <video
