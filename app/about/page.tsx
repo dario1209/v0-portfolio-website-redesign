@@ -12,6 +12,7 @@ const bioLines = [
   "Principal pianist at SONA Orchestra. 2nd violin at UoA Symphony Orchestra. Hosted \"Music Matters\" on NPR 91.3 KUAF.",
   "Data Viz Analyst at Global People Analytics, Walmart.",
   "Traded and researched crypto markets independently, before getting swept into DeFi summer, building in crypto ever since, prediction markets, AMMs, governance protocols, appchains, full-stack.",
+  "Mom to two dobermans, Dario and Reign.",
 ]
 export default function AboutPage() {
   return (
