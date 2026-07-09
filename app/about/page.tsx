@@ -33,6 +33,12 @@ export default function AboutPage() {
 
           {/* Portrait video right */}
           <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto">
+            <p
+              className="text-center text-sm text-muted-foreground mb-2"
+              style={{ fontFamily: "'Instrument Serif', serif" }}
+            >
+              Soph + Dario
+            </p>
             <video
               src="/portrait.mp4"
               autoPlay
