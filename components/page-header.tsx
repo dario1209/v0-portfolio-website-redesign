@@ -12,6 +12,7 @@ const navLinks = [
 
 export function PageHeader({ section }: { section: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -33,8 +34,24 @@ export function PageHeader({ section }: { section: string }) {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [isMenuOpen])
 
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 8)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        backgroundColor: scrolled ? "var(--background)" : "transparent",
+        backdropFilter: scrolled ? "blur(10px)" : "none",
+        opacity: scrolled ? 0.92 : 1,
+        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+      }}
+    >
       <div className="flex items-center justify-between px-8 py-5">
         {/* Left: KingDario · section */}
         <Link
