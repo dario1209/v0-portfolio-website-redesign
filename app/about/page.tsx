@@ -1,5 +1,4 @@
 import { PageHeader } from "@/components/page-header"
-import { GlitchPortrait } from "@/components/glitch-portrait"
 
 const bioLines = [
   "KingDario AKA Sophia Spirlock.",
@@ -23,11 +22,7 @@ export default function AboutPage() {
               {bioLines.map((line, i) => (
                 <li
                   key={i}
-                  className={`text-lg leading-relaxed ${
-                    line === "Burned out. Needed a reset."
-                      ? "text-muted-foreground italic"
-                      : "text-foreground"
-                  }`}
+                  className="text-lg leading-relaxed text-foreground"
                   style={{ fontFamily: "'Instrument Serif', serif" }}
                 >
                   {line}
@@ -36,9 +31,16 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          {/* Portrait right */}
-          <div className="w-full md:w-72 lg:w-80 shrink-0 h-[520px] md:ml-auto">
-            <GlitchPortrait src="/portrait.jpg" />
+          {/* Portrait video right */}
+          <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto">
+            <video
+              src="/portrait.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </main>
