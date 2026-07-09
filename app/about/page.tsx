@@ -35,7 +35,7 @@ export default function AboutPage() {
             </ul>
           </div>
           {/* Portrait video right */}
-          <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto relative md:-mt-8">
+          <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto relative md:sticky md:top-28 md:self-start">
             <p
               className={`absolute top-4 left-1/2 -translate-x-1/2 text-center text-lg text-white font-bold z-10 ${playfair.className}`}
             >
@@ -55,3 +55,4 @@ export default function AboutPage() {
     </div>
   )
 }
+ 
