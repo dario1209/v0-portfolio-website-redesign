@@ -1,4 +1,7 @@
 import { PageHeader } from "@/components/page-header"
+import { Playfair_Display } from "next/font/google"
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700"] })
 
 const bioLines = [
   "KingDario aka Sophia Spirlock.",
@@ -10,7 +13,6 @@ const bioLines = [
   "Data Viz Analyst at Global People Analytics, Walmart.",
   "Traded and researched crypto markets independently, before getting swept into DeFi summer, building in crypto ever since, prediction markets, AMMs, governance protocols, appchains, full-stack.",
 ]
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -31,13 +33,11 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-
           {/* Portrait video right */}
           <div className="w-full md:w-72 lg:w-80 shrink-0 md:ml-auto relative md:-mt-8">
             <p
-  className="absolute top-4 left-1/2 -translate-x-1/2 text-center text-lg text-white font-bold z-10"
-  style={{ fontFamily: "'Instrument Serif', serif" }}
->
+              className={`absolute top-4 left-1/2 -translate-x-1/2 text-center text-lg text-white font-bold z-10 ${playfair.className}`}
+            >
               Soph + Dario
             </p>
             <video
