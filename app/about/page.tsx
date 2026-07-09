@@ -6,7 +6,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700"] })
 const bioLines = [
   "KingDario aka Sophia Spirlock.",
   "Born in Europe, grew up in the US.",
-  "Started piano at four, violin at seven. Called a child prodigy, gave her first professional recital at ten, with her mom as manager.",
+  "Started playing the piano at four, violin at seven. Called a child prodigy, gave her first professional recital at ten, with her mom as manager.",
   "Competed internationally, several first and second prizes. Masterclasses with world-renowned pianists throughout her teens.",
   "BSc Physics, M.M in Instrumental Performance (Piano), M.M in Film Composition & Soundtrack.",
   "Principal pianist at SONA Orchestra. 2nd violin at UoA Symphony Orchestra. Hosted \"Music Matters\" on NPR 91.3 KUAF.",
