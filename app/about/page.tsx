@@ -13,7 +13,7 @@ const bioLines = [
   "Discovered Bitcoin while still in school. Didn't know it yet, but don't trust, verify had already rewired how she'd see the world from then on.",
   "Data Viz Analyst at Global People Analytics, Walmart.",
   "Traded and researched crypto markets independently, before getting swept into DeFi summer as a glorious crypto degen, building in crypto ever since, full-stack, across prediction markets, AMMs, governance protocols, appchains.",
-  "Fun Facts: Natural redhead, movie buff, DJs and produces electronic music, Legend rank in Hearthstone (mains Warlock and Rogue), fav video games over the years include Portal, Quake, DMC, Elden Ring, and Fallout, mom to two dobermans, Dario and Reign.",
+  "Fun Facts: Natural redhead, movie buff, DJs and produces electronic music, Legend rank in Hearthstone (mains Warlock and Rogue), fav games over the years include Portal, Quake, DMC, Elden Ring, Factorio, Shogun, Shinobi, and Fallout, mom to two dobermans, Dario and Reign.",
 ]
 export default function AboutPage() {
   return (
